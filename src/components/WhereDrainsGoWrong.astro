@@ -1,5 +1,5 @@
 ---
-const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\\//, '')}`;
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 const points = [
   { n: '1', title: 'Kitchen sink and branch drain', detail: 'Water from the kitchen sink enters a smaller branch drain. Grease, food scraps and soap residue can restrict this section before it joins the larger building drain.', clue: 'The kitchen sink is slow or backs up while other fixtures may still drain.', href: '/services/kitchen-bathroom-drains/' },
   { n: '2', title: 'Bathroom fixtures and branch drains', detail: 'Bathroom sinks, tubs and showers connect to branch piping that carries wastewater toward the main building drain. A blockage in one branch may affect only those fixtures.', clue: 'A bathroom sink, tub or shower drains slowly or backs up.', href: '/services/kitchen-bathroom-drains/' },
