@@ -35,14 +35,16 @@ const servicePageImages: Record<string, { src: string; alt: string; caption: str
   }
 };
 const servicePageImage = servicePageImages[Astro.url.pathname];
+const imageSrc = (src: string) => withBase(src);
 const isTreeRootImage = Astro.url.pathname === '/services/tree-roots-in-sewer-line/';
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 ---
 
 {servicePageImage && (
   <figure class="bg-white py-10 sm:py-14">
     <div class="container">
       <div class:list={["mx-auto overflow-hidden rounded-lg shadow-lg", isTreeRootImage ? "max-w-md" : "max-w-4xl"]}>
-        <img src={servicePageImage.src} alt={servicePageImage.alt} width={servicePageImage.width} height={servicePageImage.height} loading="lazy" decoding="async" class:list={["block h-auto w-full", isTreeRootImage && "max-h-[600px] w-auto mx-auto object-contain"]} />
+        <img src={imageSrc(servicePageImage.src)} alt={servicePageImage.alt} width={servicePageImage.width} height={servicePageImage.height} loading="lazy" decoding="async" class:list={["block h-auto w-full", isTreeRootImage && "max-h-[600px] w-auto mx-auto object-contain"]} />
       </div>
       <figcaption class:list={["mx-auto mt-3 text-sm leading-6 text-slate-600", isTreeRootImage ? "max-w-md" : "max-w-4xl"]}>{servicePageImage.caption}</figcaption>
     </div>
