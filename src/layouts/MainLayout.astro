@@ -20,7 +20,8 @@ interface Props {
 }
 
 const { title, description, path = '/', service, city, breadcrumbLabel, faqs } = Astro.props;
-const canonical = new URL(path, Astro.site ?? business.website).href;
+const canonicalPath = `${import.meta.env.BASE_URL}${path.replace(/^\\//, '')}`;
+const canonical = new URL(canonicalPath, Astro.site ?? business.website).href;
 const socialImage = new URL('/images/a1-main-sewer-drain-cleaning-mason-city.webp', canonical).href;
 const businessId = `${business.website}#business`;
 const websiteId = `${business.website}#website`;
@@ -160,6 +161,7 @@ const graph = [
 ];
 
 const schema = { '@context': 'https://schema.org' as const, '@graph': graph };
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 ---
 
 <!doctype html>
@@ -179,9 +181,9 @@ const schema = { '@context': 'https://schema.org' as const, '@graph': graph };
     twitter={{ card: 'summary_large_image', title, description, image: socialImage }}
   />
   <Schema item={schema as any} />
-  <link rel="sitemap" href="/sitemap.xml">
-  <link rel="describedby" type="text/markdown" href="/agent-index.md" title="A-1 Drain Cleaning agent index">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="sitemap" href={withBase('/sitemap.xml')}>
+  <link rel="describedby" type="text/markdown" href={withBase('/agent-index.md')} title="A-1 Drain Cleaning agent index">
+  <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
