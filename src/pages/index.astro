@@ -8,6 +8,9 @@ import ServicesGrid from '../components/ServicesGrid.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Footer from '../components/Footer.astro';
 import GoogleBusinessInfo from '../components/GoogleBusinessInfo.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import RecentWork from '../components/RecentWork.astro';
+import WhoWeHelp from '../components/WhoWeHelp.astro';
 import ServiceAreaCityLinks from '../components/ServiceAreaCityLinks.astro';
 ---
 
@@ -20,9 +23,11 @@ import ServiceAreaCityLinks from '../components/ServiceAreaCityLinks.astro';
   <main id="main">
     <Hero />
     <DrainSymptoms />
-    <WhereDrainsGoWrong />
-
     <ServicesGrid />
+
+    <WhereDrainsGoWrong />
+    <HowItWorks />
+    <RecentWork />
 
     <section class="bg-slate-100 py-16 sm:py-20">
       <div class="container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
@@ -41,6 +46,7 @@ import ServiceAreaCityLinks from '../components/ServiceAreaCityLinks.astro';
     </section>
 
     <ServiceAreaCityLinks />
+    <WhoWeHelp />
 
     <section class="bg-white py-16 sm:py-20" aria-labelledby="about-a1-heading">
       <div class="container grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
