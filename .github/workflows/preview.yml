@@ -1,4 +1,5 @@
 # Pull requests publish to the isolated preview site; production is a separate repository.
+# This workflow only deploys to the preview repository's own GitHub Pages site.
 name: Build and publish isolated design preview
 
 on:
