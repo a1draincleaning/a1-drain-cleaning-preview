@@ -1,0 +1,18 @@
+---
+const jobs = [
+  { src: '/images/floor-drain-backing-up-mason-city-iowa.jpeg', alt: 'Basement floor drain backup photographed by A-1 Drain Cleaning', title: 'Basement floor drain backup', note: 'A floor drain can be the first place a main drain restriction shows up.' },
+  { src: '/images/tree-root-removal-mason-city-iowa.jpg', alt: 'Tree roots removed from a sewer line by A-1 Drain Cleaning', title: 'Roots in a sewer line', note: 'Roots can catch debris and contribute to repeat sewer blockages.' },
+  { src: '/images/sewer-drain-mason-city-iowa.jpg', alt: 'Sewer drain cleaning work in Mason City, Iowa', title: 'Sewer and drain cleaning', note: 'The right cleaning method depends on the pipe, access and blockage.' },
+  { src: '/images/clogged-bathtub-drain-mason-city-iowa.webp', alt: 'Clogged bathtub drain in Mason City, Iowa', title: 'Bathroom drain clog', note: 'Hair and soap residue commonly collect in tub and shower drains.' }
+];
+---
+<section class="bg-white py-16 sm:py-20" aria-labelledby="a1-recent-work">
+  <div class="container">
+    <p class="text-sm font-black uppercase tracking-[0.2em] text-[#f36b21]">A look at the work</p>
+    <h2 id="a1-recent-work" class="mt-2 max-w-4xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Real drain problems. Real A-1 work.</h2>
+    <p class="mt-4 max-w-3xl text-lg leading-8 text-slate-700">These photos show the kinds of drain and sewer problems A-1 Drain Cleaning handles. The cause and the right way to clear a line depend on the actual pipe and symptoms.</p>
+    <div class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {jobs.map((job) => <figure class="overflow-hidden border border-slate-200 bg-[#f4f3ef]"><img src={job.src} alt={job.alt} width="900" height="650" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover"><figcaption class="p-5"><h3 class="text-lg font-black text-slate-950">{job.title}</h3><p class="mt-2 text-sm leading-6 text-slate-600">{job.note}</p></figcaption></figure>)}
+    </div>
+  </div>
+</section>
