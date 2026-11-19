@@ -1,0 +1,61 @@
+---
+const { compact = false } = Astro.props;
+---
+<header class="sticky top-0 z-40 border-b-2 border-[#1A1A68] bg-white">
+  <div class="container">
+    <div class={`flex flex-col ${compact ? 'gap-2 py-2' : 'gap-3 py-3 sm:py-4'} lg:grid lg:grid-cols-[1fr_auto] lg:items-center ${compact ? 'lg:gap-4' : 'lg:gap-6'}`}>
+      <a href="/" class={`flex ${compact ? 'min-h-10' : 'min-h-12'} shrink-0 flex-col items-center leading-none text-[#1A1A68] lg:items-center`} aria-label="A-1 Drain Cleaning home">
+        <img src="/a1-logo.svg" alt="A-1 Drain Cleaning" width="768" height="256" fetchpriority="high" loading="eager" decoding="async" class={`block h-auto w-full ${compact ? 'max-w-[10rem] sm:max-w-[12rem]' : 'max-w-[14rem] sm:max-w-[17rem]'}`} />
+        <span class={`brand-slab block text-center font-black uppercase tracking-[-0.05em] text-[#1A1A68] ${compact ? 'mt-1 text-2xl sm:text-3xl' : 'mt-2 text-5xl sm:text-6xl'}`}>DRAIN CLEANING</span>
+        <span class={`brand-slab block text-center font-black uppercase tracking-[-0.03em] text-[#1A1A68] ${compact ? 'mt-1 text-sm sm:text-base' : 'mt-2 text-2xl sm:text-3xl'}`}>MASON CITY, IOWA</span>
+      </a>
+
+      <a href="tel:+16415302728" class={`header-call-cta call-button call-button-pulse flex ${compact ? 'min-h-10 px-4 py-2 text-sm sm:px-5 sm:text-base' : 'min-h-12 px-6 py-3 text-lg'} items-center justify-center rounded-md bg-[#b4232b] text-center font-black text-white shadow-sm hover:bg-[#951d24]`} aria-label="CALL 641-530-2728">CALL 641-530-2728</a>
+    </div>
+
+    <nav aria-label="Main navigation" class="header-nav hidden flex-wrap items-center justify-center gap-2 border-t border-[#c7ccef] py-2 text-sm font-bold lg:flex">
+      <a href="/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">Home</a>
+      <a href="/services/main-drain-cleaning/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">Main Drain Cleaning</a>
+      <a href="/services/basement-floor-drains/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">Floor Drains</a>
+      <a href="/services/sewer-line-cleaning/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">Sewer Line Cleaning</a>
+      <a href="/services/tree-roots-in-sewer-line/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">Tree Roots</a>
+      <a href="/services/kitchen-drains/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">Kitchen Drains</a>
+      <a href="/services/bathroom-shower-drains/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">Bathroom Drains</a>
+      <a href="/services/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">All Services</a>
+      <a href="/service-area/" class="min-h-12 rounded-md border border-[#1A1A68] bg-[#1A1A68] px-4 py-3 font-bold !text-white shadow-sm transition-colors hover:border-[#142052] hover:bg-[#142052]">Service Area</a>
+    </nav>
+
+    <nav aria-label="Mobile navigation" class="header-nav grid grid-cols-2 gap-2 border-t border-[#c7ccef] px-0 py-2 text-center text-sm font-bold sm:grid-cols-3 lg:hidden">
+      <a href="/services/main-drain-cleaning/" class="flex min-h-12 items-center justify-center rounded-md border border-[#1A1A68] bg-[#1A1A68] px-2 py-3 font-bold !text-white shadow-sm">Main Drain</a>
+      <a href="/services/basement-floor-drains/" class="flex min-h-12 items-center justify-center rounded-md border border-[#1A1A68] bg-[#1A1A68] px-2 py-3 font-bold !text-white shadow-sm">Floor Drains</a>
+      <a href="/services/sewer-line-cleaning/" class="flex min-h-12 items-center justify-center rounded-md border border-[#1A1A68] bg-[#1A1A68] px-2 py-3 font-bold !text-white shadow-sm">Sewer Lines</a>
+      <a href="/services/tree-roots-in-sewer-line/" class="flex min-h-12 items-center justify-center rounded-md border border-[#1A1A68] bg-[#1A1A68] px-2 py-3 font-bold !text-white shadow-sm">Tree Roots</a>
+      <a href="/services/kitchen-drains/" class="flex min-h-12 items-center justify-center rounded-md border border-[#1A1A68] bg-[#1A1A68] px-2 py-3 font-bold !text-white shadow-sm">Kitchen Drains</a>
+      <a href="/services/bathroom-shower-drains/" class="flex min-h-12 items-center justify-center rounded-md border border-[#1A1A68] bg-[#1A1A68] px-2 py-3 font-bold !text-white shadow-sm">Bathroom Drains</a>
+      <a href="/services/" class="flex min-h-12 items-center justify-center rounded-md border border-[#1A1A68] bg-[#1A1A68] px-2 py-3 font-bold !text-white shadow-sm">All Services</a>
+      <a href="/service-area/" class="flex min-h-12 items-center justify-center rounded-md border border-[#1A1A68] bg-[#1A1A68] px-2 py-3 font-bold !text-white shadow-sm">Service Area</a>
+    </nav>
+  </div>
+
+  <style>
+    .header-nav a,
+    .header-nav a:hover,
+    .header-nav a:focus,
+    .header-nav a:visited {
+      color: #fff !important;
+    }
+
+    .header-call-cta,
+    .header-call-cta:hover,
+    .header-call-cta:focus-visible {
+      color: #fff !important;
+      background-color: #b4232b !important;
+    }
+
+    .header-call-cta {
+      border-top: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
+      box-shadow: 0 -2px 0 #1A1A68, 0 2px 0 #1A1A68, 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</header>

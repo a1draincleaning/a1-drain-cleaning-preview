@@ -1,0 +1,103 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import ContactCTA from '../../../components/ContactCTA.astro';
+
+const title = 'Drain Cleaning in Mason City, Iowa | A-1 Drain Cleaning';
+const description = 'Drain cleaning for clogged, slow, and backed-up drains in Mason City and surrounding North Iowa communities. Call A-1 Drain Cleaning at 641-530-2728.';
+---
+
+<MainLayout title={title} description={description} path="/services/drain-cleaning/" service={{ title: "General Drain Cleaning", description }}>
+  <Header />
+  <main id="main">
+    <section class="bg-[#1A1A68] text-white">
+      <div class="container py-14 sm:py-18 lg:py-24">
+        <nav aria-label="Breadcrumb" class="text-sm font-bold text-slate-300">
+          <a href="/" class="hover:text-white">Home</a>
+          <span class="mx-2" aria-hidden="true">/</span>
+          <a href="/services/" class="hover:text-white">Services</a>
+          <span class="mx-2" aria-hidden="true">/</span>
+          <span class="text-white">Drain Cleaning</span>
+        </nav>
+        <p class="mt-5 text-sm font-black uppercase tracking-[0.2em] text-red-300">Mason City • North Iowa</p>
+        <h1 class="mt-3 max-w-4xl text-5xl font-black leading-[.98] tracking-tight sm:text-6xl lg:text-7xl">Drain Cleaning in Mason City, Iowa</h1>
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">When a drain quits working, you usually know pretty quickly. A-1 Drain Cleaning provides drain cleaning for homeowners in Mason City and surrounding North Iowa communities dealing with clogged, slow, or backed-up drains.</p>
+        <a href="tel:+16415302728" class="call-button mt-8 inline-block rounded-md bg-[#c52b34] px-7 py-4 text-center text-lg font-black text-white shadow-lg hover:bg-[#a82129]">CALL 641-530-2728</a>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-start">
+        <article>
+          <p class="text-sm font-black uppercase tracking-[0.2em] text-[#b4232b]">Drain cleaning</p>
+          <h2 class="mt-2 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Drain problems can start small</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-700">A clogged drain can start with slow water, a sink that will not empty, or a drain that keeps backing up. The problem may be limited to one fixture, or it may involve a larger section of the drain or sewer system. What matters is figuring out where the restriction is and what is causing the problem.</p>
+          <p class="mt-4 leading-8 text-slate-700">If you are dealing with a plugged drain, backed-up drain, or what you might simply call a drain repair, call A-1 Drain Cleaning at <a href="tel:+16415302728" class="font-bold text-[#b4232b] underline underline-offset-4">641-530-2728</a>.</p>
+          <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+            <li class="border border-slate-200 bg-slate-50 p-4 font-semibold leading-7 text-slate-700">Sink or tub draining slowly</li>
+            <li class="border border-slate-200 bg-slate-50 p-4 font-semibold leading-7 text-slate-700">A drain that keeps plugging up</li>
+            <li class="border border-slate-200 bg-slate-50 p-4 font-semibold leading-7 text-slate-700">Standing water in a sink, tub, or shower</li>
+            <li class="border border-slate-200 bg-slate-50 p-4 font-semibold leading-7 text-slate-700">A drain that stops flowing</li>
+            <li class="border border-slate-200 bg-slate-50 p-4 font-semibold leading-7 text-slate-700">Water backing up when another fixture is used</li>
+            <li class="border border-slate-200 bg-slate-50 p-4 font-semibold leading-7 text-slate-700">Wastewater coming back through a floor drain</li>
+          </ul>
+
+          <h2 class="mt-10 text-3xl font-black tracking-tight text-slate-950">Drain cleaning or a larger drain problem?</h2>
+          <p class="mt-5 leading-8 text-slate-700">Not every plumbing or sewer problem is the same, and drain cleaning is not automatically the right answer for every situation. A single fixture can have a problem in its own drain. When several fixtures react together, the restriction may be farther down the shared drain or sewer line.</p>
+          <p class="mt-4 leading-8 text-slate-700">Use the more specific service pages below when you already know what type of drain problem you are dealing with.</p>
+          <ul class="mt-5 space-y-3 leading-7 text-slate-700">
+            <li><a href="/services/bathroom-shower-drains/" class="font-bold text-[#b4232b] underline underline-offset-4">Bathroom &amp; Shower Drains</a> — for bathroom sinks, showers, tubs, and related drain problems.</li>
+            <li><a href="/services/kitchen-drains/" class="font-bold text-[#b4232b] underline underline-offset-4">Kitchen Drains</a> — for kitchen sink, kitchen drain line, garbage disposal, and dishwasher drain problems.</li>
+            <li><a href="/services/main-drain-cleaning/" class="font-bold text-[#b4232b] underline underline-offset-4">Main Drain Cleaning</a> — for problems involving the main drain serving the house.</li>
+            <li><a href="/services/sewer-line-cleaning/" class="font-bold text-[#b4232b] underline underline-offset-4">Sewer Line Cleaning</a> — for problems involving the sewer line leaving the house.</li>
+            <li><a href="/services/toilet-clogs/" class="font-bold text-[#b4232b] underline underline-offset-4">Toilet Clogs</a> — for toilet blockages and related backup problems.</li>
+            <li><a href="/services/basement-floor-drains/" class="font-bold text-[#b4232b] underline underline-offset-4">Basement Floor Drains &amp; Backups</a> — when wastewater is coming up through a basement floor drain.</li>
+          </ul>
+
+          <h2 class="mt-10 text-3xl font-black tracking-tight text-slate-950">What to tell A-1 Drain Cleaning when you call</h2>
+          <p class="mt-5 leading-8 text-slate-700">The more you can describe the problem, the better. Tell us which drain or fixture is affected, whether it is slow, completely blocked, or backing up, whether the problem keeps coming back, and whether another fixture changes when water is used.</p>
+          <p class="mt-4 leading-8 text-slate-700">If the problem involves an underground drain or sewer line that needs to be located, line locating is also part of A-1 Drain Cleaning's work.</p>
+
+          <section class="mt-10 border-l-4 border-[#b4232b] bg-slate-50 p-6" aria-labelledby="drain-backup-warning">
+            <h2 id="drain-backup-warning" class="text-2xl font-black tracking-tight text-slate-950">Water backing up through a drain?</h2>
+            <ul class="mt-4 list-disc space-y-2 pl-6 leading-7 text-slate-700">
+              <li>Stop running water where possible while the backup is active.</li>
+              <li>Do not keep testing the line by running more fixtures.</li>
+              <li>Keep people and pets away from wastewater.</li>
+              <li>Tell A-1 Drain Cleaning which fixture is affected and whether other drains change when water is used.</li>
+            </ul>
+          </section>
+
+          <h2 class="mt-10 text-3xl font-black tracking-tight text-slate-950">Drain cleaning in Mason City and surrounding communities</h2>
+          <p class="mt-5 leading-8 text-slate-700">A-1 Drain Cleaning is based in Mason City, Iowa, and serves homeowners in Mason City, Clear Lake, Garner, Charles City, Northwood, Forest City, and surrounding communities.</p>
+          <p class="mt-4 leading-8 text-slate-700">If your drain is plugged, slow, or backing up, call A-1 Drain Cleaning at <a href="tel:+16415302728" class="font-bold text-[#b4232b] underline underline-offset-4">641-530-2728</a>.</p>
+
+          <section class="mt-10" aria-labelledby="drain-cleaning-faq">
+            <h2 id="drain-cleaning-faq" class="text-3xl font-black tracking-tight text-slate-950">Drain cleaning questions</h2>
+            <h3 class="mt-6 text-xl font-black tracking-tight text-slate-950">What are common signs of a clogged drain?</h3>
+            <p class="mt-2 leading-8 text-slate-700">Slow drainage, standing water, a drain that stops flowing, repeated backups, or water coming back through a drain can indicate a drainage problem.</p>
+            <h3 class="mt-6 text-xl font-black tracking-tight text-slate-950">What if more than one drain is backing up?</h3>
+            <p class="mt-2 leading-8 text-slate-700">Several fixtures reacting together can indicate a restriction farther down a shared drain or sewer line rather than a problem isolated to one fixture.</p>
+            <h3 class="mt-6 text-xl font-black tracking-tight text-slate-950">What should I do if water is backing up?</h3>
+            <p class="mt-2 leading-8 text-slate-700">Stop using fixtures that may be feeding the affected line and avoid adding more water until the problem is addressed.</p>
+            <h3 class="mt-6 text-xl font-black tracking-tight text-slate-950">Does A-1 Drain Cleaning serve areas outside Mason City?</h3>
+            <p class="mt-2 leading-8 text-slate-700">Yes. A-1 Drain Cleaning serves Mason City and surrounding communities including Clear Lake, Garner, Charles City, Northwood, and Forest City.</p>
+          </section>
+        </article>
+
+        <aside class="lg:sticky lg:top-6">
+          <div class="border border-slate-200 bg-slate-50 p-6 shadow-sm">
+            <p class="text-sm font-black uppercase tracking-[0.2em] text-[#b4232b]">Need drain cleaning?</p>
+            <h2 class="mt-2 text-2xl font-black tracking-tight text-slate-950">Call A-1 Drain Cleaning</h2>
+            <p class="mt-3 leading-7 text-slate-700">Have a clogged or backed-up drain? Call A-1 Drain Cleaning at 641-530-2728.</p>
+            <a href="tel:+16415302728" class="call-button mt-5 block rounded-md bg-[#c52b34] px-6 py-4 text-center font-black text-white hover:bg-[#a82129]">Call 641-530-2728</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+  <Footer />
+</MainLayout>
