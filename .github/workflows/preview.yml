@@ -1,12 +1,12 @@
-# Pull requests publish to the isolated preview site; production is a separate repository.
-# This workflow only deploys to the preview repository's own GitHub Pages site.
+# Pull requests validate the PR; feature-branch pushes publish to this isolated preview site.
+# Production is hosted in a separate repository and is not touched by this workflow.
 name: Build and publish isolated design preview
 
 on:
   pull_request:
     branches: [main]
   push:
-    branches: [main]
+    branches: [main, 'feat/**']
   workflow_dispatch:
 
 permissions:
@@ -43,6 +43,7 @@ jobs:
         with:
           path: dist
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
