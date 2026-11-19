@@ -1,4 +1,4 @@
-# Pull requests run validation only; Pages deployment is reserved for main/manual runs.
+# Pull requests publish to the isolated preview site; production is a separate repository.
 name: Build and publish isolated design preview
 
 on:
@@ -42,7 +42,6 @@ jobs:
         with:
           path: dist
   deploy:
-    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
