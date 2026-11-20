@@ -2,68 +2,78 @@
 import TrustBadge from './TrustBadge.astro';
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 ---
-
 <TrustBadge />
-
-<footer class="bg-[#202326] pb-24 pt-12 text-white md:pb-10">
-  <div class="container grid gap-10 md:grid-cols-[1.1fr_.9fr_1fr_1fr]">
-    <section>
-      <p class="text-3xl font-black tracking-tight">A-1 Drain Cleaning</p>
-      <p class="mt-1 font-bold text-white">Mason City, Iowa</p>
-      <address class="mt-5 not-italic leading-7 text-white">
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <section class="footer-business">
+      <p class="footer-brand">A-1 Drain Cleaning</p>
+      <p class="footer-location">Mason City, Iowa</p>
+      <address>
         206 29th St SW<br>
         Mason City, Iowa 50401
       </address>
+      <p class="footer-service-note">Drain cleaning, sewer line cleaning, and backup service.</p>
     </section>
-
-    <section>
-      <h2 class="text-sm font-black uppercase tracking-[0.18em] text-white">Call A-1 Drain Cleaning</h2>
-      <a href="tel:+16415302728" class="mt-3 inline-block min-h-12 text-2xl font-black underline decoration-[#f36b21] decoration-2 underline-offset-4">641-530-2728</a>
-      <p class="mt-3 leading-7 text-white">Drain cleaning and sewer service. Call any time for a drain backup or blockage.</p>
+    <section class="footer-contact">
+      <h2>Need a drain cleared?</h2>
+      <a class="footer-phone" href="tel:+16415302728">641-530-2728</a>
+      <p>Call A-1 Drain Cleaning any time. Explain what is backing up and where you are located.</p>
     </section>
-
     <nav aria-label="Footer service navigation">
-      <h2 class="text-sm font-black uppercase tracking-[0.18em] text-white">Services</h2>
-      <ul class="mt-3 space-y-2 text-white">
-        <li><a href={withBase('/services/')} class="hover:underline">All Drain &amp; Sewer Services</a></li>
-        <li><a href={withBase('/services/main-drain-cleaning/')} class="hover:underline">Main Drain Cleaning</a></li>
-        <li><a href={withBase('/services/sewer-line-cleaning/')} class="hover:underline">Sewer Line Cleaning</a></li>
-        <li><a href={withBase('/services/basement-floor-drains/')} class="hover:underline">Basement &amp; Floor Drains</a></li>
-        <li><a href={withBase('/services/tree-roots-in-sewer-line/')} class="hover:underline">Tree Roots in Sewer Lines</a></li>
-        <li><a href={withBase('/services/smoke-testing/')} class="hover:underline">Smoke Testing</a></li>
-        <li><a href={withBase('/service-area/')} class="hover:underline">All Service Areas</a></li>
+      <h2>Drain &amp; Sewer Services</h2>
+      <ul>
+        <li><a href={withBase('/services/')}>All services</a></li>
+        <li><a href={withBase('/services/main-drain-cleaning/')}>Main drain cleaning</a></li>
+        <li><a href={withBase('/services/sewer-line-cleaning/')}>Sewer line cleaning</a></li>
+        <li><a href={withBase('/services/basement-floor-drains/')}>Basement floor drains</a></li>
+        <li><a href={withBase('/services/tree-roots-in-sewer-line/')}>Tree roots in sewer lines</a></li>
+        <li><a href={withBase('/services/hydro-jetting/')}>Hydro-jetting</a></li>
+        <li><a href={withBase('/services/smoke-testing/')}>Smoke testing</a></li>
       </ul>
     </nav>
-
     <nav aria-label="Cities served">
-      <h2 class="text-sm font-black uppercase tracking-[0.18em] text-white">North Iowa City Pages</h2>
-      <ul class="mt-3 space-y-2 text-white">
-        <li><a href={withBase('/mason-city-drain-cleaning/')} class="hover:underline">Mason City</a></li>
-        <li><a href={withBase('/service-area/clear-lake/')} class="hover:underline">Clear Lake</a></li>
-        <li><a href={withBase('/service-area/charles-city/')} class="hover:underline">Charles City</a></li>
-        <li><a href={withBase('/service-area/forest-city/')} class="hover:underline">Forest City</a></li>
-        <li><a href={withBase('/service-area/garner/')} class="hover:underline">Garner</a></li>
-        <li><a href={withBase('/service-area/northwood/')} class="hover:underline">Northwood</a></li>
-      </ul>
-      <h2 class="mt-6 text-sm font-black uppercase tracking-[0.18em] text-white">Additional Service Area</h2>
-      <ul class="mt-3 space-y-2 text-white">
-        <li><a href={withBase('/albert-lea-mn-drain-cleaning/')} class="hover:underline">Albert Lea, Minnesota</a></li>
+      <h2>Nearby City Pages</h2>
+      <ul>
+        <li><a href={withBase('/mason-city-drain-cleaning/')}>Mason City</a></li>
+        <li><a href={withBase('/service-area/clear-lake/')}>Clear Lake</a></li>
+        <li><a href={withBase('/service-area/charles-city/')}>Charles City</a></li>
+        <li><a href={withBase('/service-area/forest-city/')}>Forest City</a></li>
+        <li><a href={withBase('/service-area/garner/')}>Garner</a></li>
+        <li><a href={withBase('/service-area/hampton/')}>Hampton</a></li>
+        <li><a href={withBase('/service-area/nora-springs/')}>Nora Springs</a></li>
+        <li><a href={withBase('/service-area/northwood/')}>Northwood</a></li>
+        <li><a href={withBase('/service-area/rockwell/')}>Rockwell</a></li>
+        <li><a href={withBase('/albert-lea-mn-drain-cleaning/')}>Albert Lea, Minnesota</a></li>
       </ul>
     </nav>
   </div>
-
-  <nav aria-label="Additional footer links" class="container mt-8 border-t border-white/10 pt-5">
-    <ul class="flex flex-wrap gap-x-5 gap-y-3 text-sm text-white">
-      <li><a href={withBase('/')} class="hover:underline">Home</a></li>
-      <li><a href={withBase('/about/')} class="hover:underline">About A-1 Drain Cleaning</a></li>
-      <li><a href={withBase('/contact/')} class="hover:underline">Contact</a></li>
-      <li><a href={withBase('/iowa-drain-cleaning/')} class="hover:underline">Iowa Drain Cleaning</a></li>
-      <li><a href={withBase('/privacy-policy/')} class="hover:underline">Privacy Policy</a></li>
-      <li><a href={withBase('/terms/')} class="hover:underline">Terms of Use</a></li>
-    </ul>
-  </nav>
-
-  <div class="container mt-6 text-sm text-white">
-    © {new Date().getFullYear()} A-1 Drain Cleaning. All rights reserved.
+  <div class="container footer-bottom">
+    <nav aria-label="Additional footer links">
+      <a href={withBase('/about/')}>About</a>
+      <a href={withBase('/service-area/')}>Service area</a>
+      <a href={withBase('/contact/')}>Contact</a>
+      <a href={withBase('/privacy-policy/')}>Privacy</a>
+      <a href={withBase('/terms/')}>Terms</a>
+    </nav>
+    <p>© {new Date().getFullYear()} A-1 Drain Cleaning. All rights reserved.</p>
   </div>
 </footer>
+<style>
+.site-footer { background:#101d2a; color:#f4f7f9; padding:3.5rem 0 2rem; border-top:5px solid #1676a8; }
+.footer-grid { display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; gap:2.25rem; }
+.site-footer h2 { margin:0 0 1rem; color:#9bd8f3; font-size:.78rem; font-weight:900; letter-spacing:.13em; text-transform:uppercase; }
+.footer-brand { margin:0; font-size:1.8rem; font-weight:950; letter-spacing:-.04em; line-height:1.1; }
+.footer-location { margin:.4rem 0 0; color:#9bd8f3; font-weight:800; }
+.site-footer address { margin-top:1.2rem; font-style:normal; line-height:1.8; }
+.footer-service-note,.footer-contact p { margin-top:1rem; color:#c8d2d9; line-height:1.7; font-size:.92rem; }
+.footer-phone { display:inline-block; color:#fff; font-size:1.8rem; font-weight:950; text-decoration:underline; text-decoration-color:#f06424; text-decoration-thickness:3px; text-underline-offset:5px; }
+.site-footer ul { margin:0; padding:0; list-style:none; }
+.site-footer li+li { margin-top:.55rem; }
+.site-footer a { color:#edf3f6; text-decoration:none; }
+.site-footer a:hover { color:#9bd8f3; text-decoration:underline; }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:2.5rem; padding-top:1.4rem; border-top:1px solid #354653; color:#b9c6cf; font-size:.82rem; }
+.footer-bottom nav { display:flex; flex-wrap:wrap; gap:1.2rem; }
+.footer-bottom p { margin:0; }
+@media(max-width:800px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+@media(max-width:540px){ .footer-grid{grid-template-columns:1fr; gap:2rem;} .footer-bottom{align-items:flex-start; flex-direction:column;} }
+</style>
