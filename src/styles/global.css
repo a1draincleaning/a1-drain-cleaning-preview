@@ -388,3 +388,54 @@ main p, main li { text-wrap: pretty; }
  .header-call-cta .call-label { font-size:.55rem; }
  .header-call-cta strong { font-size:1.12rem; }
 }
+
+
+/* Route-wide legacy palette normalization: applies to service, city, about,
+   contact, diagnostic, and policy routes without altering their copy or URLs. */
+:root {
+  --navy:#10283d;
+  --blue:#1676a8;
+  --accent:#f06424;
+  --line:#d7e0e6;
+  --card:#ffffff;
+  --ink:#172331;
+  --muted:#566575;
+}
+main [class*="bg-[#1A1A68]"],
+main [class*="bg-[#202326]"],
+main [class*="bg-navy"] { background-color:#10283d !important; }
+main [class*="bg-[#c52b34]"],
+main [class*="bg-[#b4232b]"],
+main [class*="bg-red-"] { background-color:#f06424 !important; }
+main [class*="hover:bg-[#a82129]"]:hover,
+main [class*="hover:bg-red-"]:hover { background-color:#cf4d16 !important; }
+main [class*="text-[#b4232b]"],
+main [class*="text-red-300"],
+main [class*="text-red-200"],
+main [class*="text-accent"] { color:#1676a8 !important; }
+main [class*="border-[#b4232b]"],
+main [class*="border-red-"] { border-color:#1676a8 !important; }
+main [class*="bg-slate-50"],
+main [class*="bg-slate-100"],
+main [class*="bg-gray-50"],
+main [class*="bg-gray-100"] { background-color:#eaf0f3 !important; }
+main [class*="border-slate-200"],
+main [class*="border-slate-300"],
+main [class*="border-gray-"] { border-color:#d7e0e6 !important; }
+main [class*="rounded-md"] { border-radius:3px !important; }
+main [class*="shadow-sm"],
+main [class*="shadow-lg"] { box-shadow:0 5px 18px rgba(16,40,61,.08) !important; }
+main h1, main h2, main h3 { letter-spacing:-.035em; }
+main > section[class*="bg-[#1A1A68]"] h1,
+main > section[class*="bg-[#1A1A68]"] h2,
+main > section[class*="bg-[#1A1A68]"] h3 { color:#fff; }
+main > section[class*="bg-[#1A1A68]"] p,
+main > section[class*="bg-[#1A1A68]"] li { color:#e1eaf0; }
+main a[class*="bg-[#c52b34]"],
+main a[class*="bg-[#b4232b]"] { color:#fff !important; }
+main article, main details { border-radius:3px; }
+.site-header { position:relative; }
+@media(max-width:760px) {
+  .nav-inner { overflow-x:auto; overscroll-behavior-x:contain; }
+  main [class*="grid-cols-"] { min-width:0; }
+}
