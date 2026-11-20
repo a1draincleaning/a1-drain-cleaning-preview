@@ -1,7 +1,11 @@
 ---
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 ---
-<header class="site-header">
+---
+interface Props { overlay?: boolean }
+const { overlay = false } = Astro.props;
+---
+<header class:list={["site-header", { "site-header--overlay": overlay }]}>
   <div class="header-topline">
     <div class="container header-topline-inner">
       <span>MASON CITY, IOWA <i aria-hidden="true">/</i> LOCAL DRAIN &amp; SEWER SERVICE</span>
