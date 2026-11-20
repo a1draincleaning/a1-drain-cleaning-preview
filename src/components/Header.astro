@@ -23,14 +23,15 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^
   <nav aria-label="Main navigation" class="site-nav">
     <div class="container nav-inner">
       <a href={withBase('/')}>Home</a>
-      <a href={withBase('/services/main-drain-cleaning/')}>Main Drain</a>
-      <a href={withBase('/services/basement-floor-drains/')}>Floor Drains</a>
-      <a href={withBase('/services/sewer-line-cleaning/')}>Sewer Lines</a>
-      <a href={withBase('/services/tree-roots-in-sewer-line/')}>Tree Roots</a>
-      <a href={withBase('/services/kitchen-bathroom-drains/')}>Kitchen &amp; Bath</a>
-      <a href={withBase('/services/')}>All Services</a>
-      <a href={withBase('/service-area/')}>Service Area</a>
-      <a href="#callback">Get a call back</a>
+      <a href={withBase('/services/')}>Services</a>
+      <a href={withBase('/services/sewer-backup-emergency/')}>Emergency drain service</a>
+      <a href={withBase('/services/hydro-jetting/')}>Hydro jetting</a>
+      <a href={withBase('/services/sewer-line-cleaning/')}>Sewer line cleaning</a>
+      <a href="#where-drains-heading">Where drains fail</a>
+      <a href={withBase('/service-area/')}>Areas served</a>
+      <a href={withBase('/about/')}>About Josh</a>
+      <a href="#faq-title">FAQ</a>
+      <a href={withBase('/contact/')}>Contact</a>
     </div>
   </nav>
 </header>
