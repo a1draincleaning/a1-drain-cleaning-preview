@@ -1,35 +1,39 @@
 ---
-const { compact = false } = Astro.props;
+interface Props { overlay?: boolean }
+const { overlay = false } = Astro.props;
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 ---
-<header class="site-header sticky top-0 z-40">
+<header class:list={["site-header", { "site-header--overlay": overlay }]}>
   <div class="header-topline">
-    <div class="container flex items-center justify-between gap-3 py-2 text-xs font-bold uppercase tracking-[0.16em]">
-      <span>Mason City, Iowa <span aria-hidden="true">•</span> North Iowa Service Area</span>
-      <span class="hidden sm:inline">Drain &amp; Sewer Cleaning</span>
+    <div class="container header-topline-inner">
+      <span>MASON CITY, IOWA <i aria-hidden="true">/</i> LOCAL DRAIN &amp; SEWER SERVICE</span>
+      <span class="header-topline-note">Serving nine North Iowa counties</span>
     </div>
   </div>
   <div class="container header-main">
-    <a href="/" class="brand-link" aria-label="A-1 Drain Cleaning home">
-      <img src="/a1-logo.svg" alt="A-1 Drain Cleaning" width="768" height="256" fetchpriority="high" loading="eager" decoding="async">
+    <a href={withBase('/')} class="brand-link" aria-label="A-1 Drain Cleaning home">
+      <img src={withBase('/a1-logo.svg')} alt="A-1 Drain Cleaning" width="768" height="256" fetchpriority="high" loading="eager" decoding="async">
       <span class="brand-caption">DRAIN CLEANING <i aria-hidden="true">/</i> MASON CITY, IOWA</span>
     </a>
-    <a href="tel:+16415302728" class="header-call-cta call-button" aria-label="Call A-1 Drain Cleaning at 641-530-2728">
-      <span class="call-label">Need a drain cleared?</span>
-      <strong>641-530-2728</strong>
-      <span class="call-subline">Call A-1 Drain Cleaning</span>
-    </a>
+    <div class="header-action">
+      <span class="header-action-label">Clogged drain? Sewer backing up?</span>
+      <a href="tel:+16415302728" class="header-call-cta call-button" aria-label="Call A-1 Drain Cleaning at 641-530-2728">
+        <span class="call-label">CALL A-1 DRAIN CLEANING</span>
+        <strong>641-530-2728</strong>
+      </a>
+      <span class="header-action-foot">24/7 drain and sewer service</span>
+    </div>
   </div>
   <nav aria-label="Main navigation" class="site-nav">
     <div class="container nav-inner">
-      <a href="/">Home</a>
-      <a href="/services/main-drain-cleaning/">Main Drain</a>
-      <a href="/services/basement-floor-drains/">Floor Drains</a>
-      <a href="/services/sewer-line-cleaning/">Sewer Lines</a>
-      <a href="/services/tree-roots-in-sewer-line/">Tree Roots</a>
-      <a href="/services/kitchen-bathroom-drains/">Kitchen &amp; Bath</a>
-      <a href="/services/">All Services</a>
-      <a href="/service-area/">Service Area</a>
-      <a href="#callback">Get a call back</a>
+      <a href={withBase('/')}>Home</a>
+      <a href={withBase('/services/')}>Drain &amp; Sewer Services</a>
+      <a href={withBase('/services/sewer-backup-emergency/')}>Emergency Backups</a>
+      <a href={withBase('/services/hydro-jetting/')}>Hydro-Jetting</a>
+      <a href={withBase('/services/sewer-line-cleaning/')}>Sewer Lines</a>
+      <a href={withBase('/service-area/')}>Service Area</a>
+      <a href={withBase('/about/')}>About Josh</a>
+      <a href={withBase('/contact/')}>Contact</a>
     </div>
   </nav>
 </header>

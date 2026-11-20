@@ -6,6 +6,7 @@ import ContactCTA from '../../../components/ContactCTA.astro';
 
 const title = 'Kitchen Drain Cleaning & Drain Line Service | Mason City, IA';
 const description = 'Kitchen drain cleaning for slow sinks, blocked kitchen drain lines, garbage disposal problems, and dishwasher backups. A-1 Drain Cleaning serves Mason City and surrounding communities.';
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 ---
 
 <MainLayout title={title} description={description} path="/services/kitchen-drains/" breadcrumbLabel="Kitchen Drains" service={{ title: 'Kitchen Drain Cleaning & Garbage Disposal Service', description }}>
@@ -14,8 +15,8 @@ const description = 'Kitchen drain cleaning for slow sinks, blocked kitchen drai
     <section class="bg-[#1A1A68] text-white">
       <div class="container py-14 sm:py-18 lg:py-24">
         <nav aria-label="Breadcrumb" class="text-sm font-bold text-slate-300">
-          <a href="/" class="hover:text-white">Home</a><span class="mx-2" aria-hidden="true">/</span>
-          <a href="/services/" class="hover:text-white">Services</a><span class="mx-2" aria-hidden="true">/</span>
+          <a href={withBase('/')} class="hover:text-white">Home</a><span class="mx-2" aria-hidden="true">/</span>
+          <a href={withBase('/services/')} class="hover:text-white">Services</a><span class="mx-2" aria-hidden="true">/</span>
           <span class="text-white">Kitchen Drains</span>
         </nav>
         <p class="mt-5 text-sm font-black uppercase tracking-[0.2em] text-red-300">Kitchen drains • Garbage disposals • Dishwashers • Mason City • North Iowa</p>

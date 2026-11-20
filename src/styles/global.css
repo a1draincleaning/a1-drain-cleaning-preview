@@ -300,3 +300,142 @@ summary:focus-visible {
   padding: 10px;
 }
 .skip:focus { left: 8px; }
+
+
+/* DrainCo-inspired site-wide visual system: shared by every existing route. */
+:root {
+  --ink: #172331;
+  --charcoal: #101d2a;
+  --orange: #f06424;
+  --paper: #f3f5f6;
+  --muted: #566575;
+  --navy: #10283d;
+  --blue: #1676a8;
+  --line: #d7e0e6;
+}
+body { background: var(--paper); color: var(--ink); }
+main { background: var(--paper); }
+main > section { position: relative; }
+main > section[class*="bg-[#1A1A68]"],
+main > section[class*="bg-[#202326]"] {
+  background: linear-gradient(135deg, #10283d 0%, #173b55 100%) !important;
+}
+main > section[class*="bg-slate-100"],
+main > section[class*="bg-gray-100"] { background: #e9eef1 !important; }
+main > section[class*="bg-white"] { background: #f8fafb !important; }
+main [class*="bg-[#c52b34]"],
+main [class*="bg-[#b4232b]"],
+main [class*="bg-red-"] { background-color: var(--orange) !important; }
+main [class*="hover:bg-[#a82129]"]:hover,
+main [class*="hover:bg-red-"]:hover { background-color: #cf4d16 !important; }
+main [class*="text-[#b4232b]"],
+main [class*="text-red-300"],
+main [class*="text-red-200"] { color: var(--blue) !important; }
+main > section[class*="bg-[#1A1A68]"] [class*="text-red-"],
+main > section[class*="bg-[#1A1A68]"] [class*="text-[#b4232b]"] { color: #8ed4f4 !important; }
+main article[class*="border"],
+main details[class*="border"],
+main a[class*="border-slate-200"] {
+  border-color: var(--line) !important;
+  border-radius: 3px;
+}
+main article[class*="border"],
+main details[class*="border"] { box-shadow: 0 5px 18px rgba(16,40,61,.055); }
+main h1, main h2, main h3 { text-wrap: balance; }
+main a[class*="rounded-md"][class*="bg-"],
+main a[class*="inline-block"][class*="bg-"] {
+  border-radius: 3px !important;
+  box-shadow: 0 3px 0 rgba(10,25,38,.18);
+}
+main a[class*="hover:border-[#b4232b]"]:hover,
+main a[class*="hover:text-[#b4232b]"]:hover { border-color: var(--blue) !important; color: var(--blue) !important; }
+main p, main li { text-wrap: pretty; }
+
+@media (max-width: 767px) {
+  body { padding-bottom: 5.5rem; }
+  main > section { scroll-margin-top: 112px; }
+}
+
+
+/* Shared header treatment used across every route. */
+.header-topline { background:#0b1722; border:0; color:#cbd7df; }
+.header-topline-inner { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding-block:.55rem; font-size:.68rem; font-weight:900; letter-spacing:.13em; }
+.header-topline-inner i { color:#54a6d1; font-style:normal; padding-inline:.35rem; }
+.header-topline-note { color:#aebdc8; letter-spacing:.08em; }
+.site-header { position:relative; z-index:40; color:#fff; background:#10283d; border-top:4px solid #1676a8; box-shadow:0 4px 18px rgba(9,25,39,.16); }
+.header-main { min-height:112px; padding-block:1rem; }
+.brand-link img { width:min(245px,46vw); filter:none; }
+.brand-caption { color:#c5d5df; font-size:.65rem; letter-spacing:.15em; }
+.brand-caption i { color:#54a6d1; }
+.header-action { display:flex; flex-direction:column; align-items:center; gap:.25rem; }
+.header-action-label,.header-action-foot { color:#c5d5df; font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.header-action-foot { color:#9fb5c4; font-size:.62rem; }
+.header-call-cta { min-width:255px; border:0; border-radius:2px; padding:.55rem 1.25rem; box-shadow:0 3px 0 #a93e12; }
+.header-call-cta strong { font-size:clamp(1.35rem,2.2vw,1.85rem); letter-spacing:-.025em; }
+.site-nav { background:#183a53; border-top:1px solid #31566e; }
+.nav-inner { min-height:50px; }
+.nav-inner a { color:#f5f8fa; font-size:.78rem; letter-spacing:.015em; border-bottom:3px solid transparent; }
+.nav-inner a:hover,.nav-inner a:focus-visible { background:#214b68; border-bottom-color:#f06424; }
+@media(max-width:760px){
+ .header-topline-inner { justify-content:center; text-align:center; font-size:.58rem; }
+ .header-topline-note { display:none; }
+ .header-main { min-height:88px; }
+ .brand-link img { width:min(165px,40vw); }
+ .brand-caption { font-size:.52rem; }
+ .header-action { gap:.2rem; }
+ .header-action-label,.header-action-foot { font-size:.52rem; letter-spacing:.04em; }
+ .header-call-cta { min-width:0; padding:.48rem .65rem; }
+ .header-call-cta .call-label { font-size:.55rem; }
+ .header-call-cta strong { font-size:1.12rem; }
+}
+
+
+/* Route-wide legacy palette normalization: applies to service, city, about,
+   contact, diagnostic, and policy routes without altering their copy or URLs. */
+:root {
+  --navy:#10283d;
+  --blue:#1676a8;
+  --accent:#f06424;
+  --line:#d7e0e6;
+  --card:#ffffff;
+  --ink:#172331;
+  --muted:#566575;
+}
+main [class*="bg-[#1A1A68]"],
+main [class*="bg-[#202326]"],
+main [class*="bg-navy"] { background-color:#10283d !important; }
+main [class*="bg-[#c52b34]"],
+main [class*="bg-[#b4232b]"],
+main [class*="bg-red-"] { background-color:#f06424 !important; }
+main [class*="hover:bg-[#a82129]"]:hover,
+main [class*="hover:bg-red-"]:hover { background-color:#cf4d16 !important; }
+main [class*="text-[#b4232b]"],
+main [class*="text-red-300"],
+main [class*="text-red-200"],
+main [class*="text-accent"] { color:#1676a8 !important; }
+main [class*="border-[#b4232b]"],
+main [class*="border-red-"] { border-color:#1676a8 !important; }
+main [class*="bg-slate-50"],
+main [class*="bg-slate-100"],
+main [class*="bg-gray-50"],
+main [class*="bg-gray-100"] { background-color:#eaf0f3 !important; }
+main [class*="border-slate-200"],
+main [class*="border-slate-300"],
+main [class*="border-gray-"] { border-color:#d7e0e6 !important; }
+main [class*="rounded-md"] { border-radius:3px !important; }
+main [class*="shadow-sm"],
+main [class*="shadow-lg"] { box-shadow:0 5px 18px rgba(16,40,61,.08) !important; }
+main h1, main h2, main h3 { letter-spacing:-.035em; }
+main > section[class*="bg-[#1A1A68]"] h1,
+main > section[class*="bg-[#1A1A68]"] h2,
+main > section[class*="bg-[#1A1A68]"] h3 { color:#fff; }
+main > section[class*="bg-[#1A1A68]"] p,
+main > section[class*="bg-[#1A1A68]"] li { color:#e1eaf0; }
+main a[class*="bg-[#c52b34]"],
+main a[class*="bg-[#b4232b]"] { color:#fff !important; }
+main article, main details { border-radius:3px; }
+.site-header { position:relative; }
+@media(max-width:760px) {
+  .nav-inner { overflow-x:auto; overscroll-behavior-x:contain; }
+  main [class*="grid-cols-"] { min-width:0; }
+}

@@ -1,3 +1,5 @@
+# Pull requests validate the PR; feature-branch pushes publish to this isolated preview site.
+# Production is hosted in a separate repository and is not touched by this workflow.
 name: Build and publish isolated design preview
 
 on:

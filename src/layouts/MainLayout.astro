@@ -20,8 +20,10 @@ interface Props {
 }
 
 const { title, description, path = '/', service, city, breadcrumbLabel, faqs } = Astro.props;
-const canonical = new URL(path, Astro.site ?? business.website).href;
-const socialImage = new URL('/images/a1-main-sewer-drain-cleaning-mason-city.webp', canonical).href;
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+const canonicalPath = `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+const canonical = new URL(canonicalPath, Astro.site ?? business.website).href;
+const socialImage = new URL(withBase('/images/a1-main-sewer-drain-cleaning-mason-city.webp'), Astro.site ?? business.website).href;
 const businessId = `${business.website}#business`;
 const websiteId = `${business.website}#website`;
 
@@ -167,7 +169,7 @@ const schema = { '@context': 'https://schema.org' as const, '@graph': graph };
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#202326">
+  <meta name="theme-color" content="#10283d">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="msvalidate.01" content="963F3EADCED4173B9A7FC77E3B84FADB">
   <meta name="google-site-verification" content="42JgcD63nJz97wrQoV4JkaEuwJuAfDHTswGmHnKFruc">
@@ -179,27 +181,27 @@ const schema = { '@context': 'https://schema.org' as const, '@graph': graph };
     twitter={{ card: 'summary_large_image', title, description, image: socialImage }}
   />
   <Schema item={schema as any} />
-  <link rel="sitemap" href="/sitemap.xml">
-  <link rel="describedby" type="text/markdown" href="/agent-index.md" title="A-1 Drain Cleaning agent index">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="sitemap" href={withBase('/sitemap.xml')}>
+  <link rel="describedby" type="text/markdown" href={withBase('/agent-index.md')} title="A-1 Drain Cleaning agent index">
+  <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <slot />
-  <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-[#444] bg-[#202326] p-3 md:hidden">
-    <a class="bottom-call-cta call-button block min-h-12 rounded-md bg-[#f36b21] px-4 py-3 text-center font-black text-white" href={`tel:${business.phone.tel}`}>CALL {business.phone.formatted}</a>
+  <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-[#31566e] bg-[#10283d] p-3 md:hidden">
+    <a class="bottom-call-cta call-button block min-h-12 rounded-md bg-[#f06424] px-4 py-3 text-center font-black text-white" href={`tel:${business.phone.tel}`}>CALL {business.phone.formatted}</a>
   </div>
   <style>
     .bottom-call-cta,
     .bottom-call-cta:hover,
     .bottom-call-cta:focus-visible {
       color: #fff !important;
-      background-color: #f36b21 !important;
+      background-color: #f06424 !important;
     }
 
     .bottom-call-cta {
       border: 1px solid #ffb184;
-      box-shadow: 0 0 0 2px #202326;
+      box-shadow: 0 0 0 2px #10283d;
     }
   </style>
 </body>
