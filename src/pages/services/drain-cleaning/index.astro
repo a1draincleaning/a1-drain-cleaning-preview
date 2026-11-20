@@ -6,6 +6,7 @@ import ContactCTA from '../../../components/ContactCTA.astro';
 
 const title = 'Drain Cleaning in Mason City, Iowa | A-1 Drain Cleaning';
 const description = 'Drain cleaning for clogged, slow, and backed-up drains in Mason City and surrounding North Iowa communities. Call A-1 Drain Cleaning at 641-530-2728.';
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 ---
 
 <MainLayout title={title} description={description} path="/services/drain-cleaning/" service={{ title: "General Drain Cleaning", description }}>
@@ -14,9 +15,9 @@ const description = 'Drain cleaning for clogged, slow, and backed-up drains in M
     <section class="bg-[#1A1A68] text-white">
       <div class="container py-14 sm:py-18 lg:py-24">
         <nav aria-label="Breadcrumb" class="text-sm font-bold text-slate-300">
-          <a href="/" class="hover:text-white">Home</a>
+          <a href={withBase('/')} class="hover:text-white">Home</a>
           <span class="mx-2" aria-hidden="true">/</span>
-          <a href="/services/" class="hover:text-white">Services</a>
+          <a href={withBase('/services/')} class="hover:text-white">Services</a>
           <span class="mx-2" aria-hidden="true">/</span>
           <span class="text-white">Drain Cleaning</span>
         </nav>
@@ -47,12 +48,12 @@ const description = 'Drain cleaning for clogged, slow, and backed-up drains in M
           <p class="mt-5 leading-8 text-slate-700">Not every plumbing or sewer problem is the same, and drain cleaning is not automatically the right answer for every situation. A single fixture can have a problem in its own drain. When several fixtures react together, the restriction may be farther down the shared drain or sewer line.</p>
           <p class="mt-4 leading-8 text-slate-700">Use the more specific service pages below when you already know what type of drain problem you are dealing with.</p>
           <ul class="mt-5 space-y-3 leading-7 text-slate-700">
-            <li><a href="/services/bathroom-shower-drains/" class="font-bold text-[#b4232b] underline underline-offset-4">Bathroom &amp; Shower Drains</a> — for bathroom sinks, showers, tubs, and related drain problems.</li>
-            <li><a href="/services/kitchen-drains/" class="font-bold text-[#b4232b] underline underline-offset-4">Kitchen Drains</a> — for kitchen sink, kitchen drain line, garbage disposal, and dishwasher drain problems.</li>
-            <li><a href="/services/main-drain-cleaning/" class="font-bold text-[#b4232b] underline underline-offset-4">Main Drain Cleaning</a> — for problems involving the main drain serving the house.</li>
-            <li><a href="/services/sewer-line-cleaning/" class="font-bold text-[#b4232b] underline underline-offset-4">Sewer Line Cleaning</a> — for problems involving the sewer line leaving the house.</li>
-            <li><a href="/services/toilet-clogs/" class="font-bold text-[#b4232b] underline underline-offset-4">Toilet Clogs</a> — for toilet blockages and related backup problems.</li>
-            <li><a href="/services/basement-floor-drains/" class="font-bold text-[#b4232b] underline underline-offset-4">Basement Floor Drains &amp; Backups</a> — when wastewater is coming up through a basement floor drain.</li>
+            <li><a href={withBase('/services/bathroom-shower-drains/')} class="font-bold text-[#b4232b] underline underline-offset-4">Bathroom &amp; Shower Drains</a> — for bathroom sinks, showers, tubs, and related drain problems.</li>
+            <li><a href={withBase('/services/kitchen-drains/')} class="font-bold text-[#b4232b] underline underline-offset-4">Kitchen Drains</a> — for kitchen sink, kitchen drain line, garbage disposal, and dishwasher drain problems.</li>
+            <li><a href={withBase('/services/main-drain-cleaning/')} class="font-bold text-[#b4232b] underline underline-offset-4">Main Drain Cleaning</a> — for problems involving the main drain serving the house.</li>
+            <li><a href={withBase('/services/sewer-line-cleaning/')} class="font-bold text-[#b4232b] underline underline-offset-4">Sewer Line Cleaning</a> — for problems involving the sewer line leaving the house.</li>
+            <li><a href={withBase('/services/toilet-clogs/')} class="font-bold text-[#b4232b] underline underline-offset-4">Toilet Clogs</a> — for toilet blockages and related backup problems.</li>
+            <li><a href={withBase('/services/basement-floor-drains/')} class="font-bold text-[#b4232b] underline underline-offset-4">Basement Floor Drains &amp; Backups</a> — when wastewater is coming up through a basement floor drain.</li>
           </ul>
 
           <h2 class="mt-10 text-3xl font-black tracking-tight text-slate-950">What to tell A-1 Drain Cleaning when you call</h2>
