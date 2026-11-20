@@ -1,9 +1,7 @@
 ---
-const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
----
----
 interface Props { overlay?: boolean }
 const { overlay = false } = Astro.props;
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 ---
 <header class:list={["site-header", { "site-header--overlay": overlay }]}>
   <div class="header-topline">
