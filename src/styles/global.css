@@ -300,3 +300,58 @@ summary:focus-visible {
   padding: 10px;
 }
 .skip:focus { left: 8px; }
+
+
+/* DrainCo-inspired site-wide visual system: shared by every existing route. */
+:root {
+  --ink: #172331;
+  --charcoal: #101d2a;
+  --orange: #f06424;
+  --paper: #f3f5f6;
+  --muted: #566575;
+  --navy: #10283d;
+  --blue: #1676a8;
+  --line: #d7e0e6;
+}
+body { background: var(--paper); color: var(--ink); }
+main { background: var(--paper); }
+main > section { position: relative; }
+main > section[class*="bg-[#1A1A68]"],
+main > section[class*="bg-[#202326]"] {
+  background: linear-gradient(135deg, #10283d 0%, #173b55 100%) !important;
+}
+main > section[class*="bg-slate-100"],
+main > section[class*="bg-gray-100"] { background: #e9eef1 !important; }
+main > section[class*="bg-white"] { background: #f8fafb !important; }
+main [class*="bg-[#c52b34]"],
+main [class*="bg-[#b4232b]"],
+main [class*="bg-red-"] { background-color: var(--orange) !important; }
+main [class*="hover:bg-[#a82129]"]:hover,
+main [class*="hover:bg-red-"]:hover { background-color: #cf4d16 !important; }
+main [class*="text-[#b4232b]"],
+main [class*="text-red-300"],
+main [class*="text-red-200"] { color: var(--blue) !important; }
+main > section[class*="bg-[#1A1A68]"] [class*="text-red-"],
+main > section[class*="bg-[#1A1A68]"] [class*="text-[#b4232b]"] { color: #8ed4f4 !important; }
+main article[class*="border"],
+main details[class*="border"],
+main a[class*="border-slate-200"] {
+  border-color: var(--line) !important;
+  border-radius: 3px;
+}
+main article[class*="border"],
+main details[class*="border"] { box-shadow: 0 5px 18px rgba(16,40,61,.055); }
+main h1, main h2, main h3 { text-wrap: balance; }
+main a[class*="rounded-md"][class*="bg-"],
+main a[class*="inline-block"][class*="bg-"] {
+  border-radius: 3px !important;
+  box-shadow: 0 3px 0 rgba(10,25,38,.18);
+}
+main a[class*="hover:border-[#b4232b]"]:hover,
+main a[class*="hover:text-[#b4232b]"]:hover { border-color: var(--blue) !important; color: var(--blue) !important; }
+main p, main li { text-wrap: pretty; }
+
+@media (max-width: 767px) {
+  body { padding-bottom: 5.5rem; }
+  main > section { scroll-margin-top: 112px; }
+}
